@@ -1,21 +1,19 @@
 import React from "react";
-import Tooltip from "./Tooltip"
+import Tooltip from "../components/Tooltip";
 
 const App = () => {
   return (
     <div>
-      <h1>React Tooltip Example</h1>
-
-      <Tooltip text="This is a tooltip for Button">
-        <button>Hover me</button>
+      <Tooltip text="Tooltip for H2">
+        <h2>Hello!</h2>
       </Tooltip>
 
-      <br /><br />
+      <Tooltip text="Tooltip for paragraph">
+        <p>This is a paragraph with tooltip</p>
+      </Tooltip>
 
-      <Tooltip text="Tooltip on text">
-        <span style={{ textDecoration: "underline", cursor: "pointer" }}>
-          Hover over this text
-        </span>
+      <Tooltip text="Another tooltip">
+        <span>Hover over me</span>
       </Tooltip>
     </div>
   );
