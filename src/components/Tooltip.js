@@ -1,23 +1,20 @@
 import React, { useState } from "react";
 
 const Tooltip = ({ text, children }) => {
-  const [showTooltip, setShowTooltip] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
-  const handleMouseEnter = () => setShowTooltip(true);
-  const handleMouseLeave = () => setShowTooltip(false);
-
-  // Clone the child to add mouse events and className
-  const childWithProps = React.cloneElement(children, {
-    className: `${children.props.className || ""} tooltip`.trim(),
-    onMouseEnter: handleMouseEnter,
-    onMouseLeave: handleMouseLeave
-  });
+  const showTooltip = () => setIsVisible(true);
+  const hideTooltip = () => setIsVisible(false);
 
   return (
-    <>
-      {childWithProps}
-      {showTooltip && <div className="tooltiptext">{text}</div>}
-    </>
+    <div
+      className="tooltip"
+      onMouseEnter={showTooltip}
+      onMouseLeave={hideTooltip}
+    >
+      {children}
+      {isVisible && <span className="tooltiptext">{text}</span>}
+    </div>
   );
 };
 
