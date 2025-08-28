@@ -1,32 +1,20 @@
 import React from "react";
 import Tooltip from "./Tooltip";
-import "../styles/App.css"
+import "../styles/App.css";
 
 function App() {
   return (
-    <div style={{ padding: "50px" }}>
-      <h1>React Tooltip Example</h1>
-
-      <Tooltip text="This is a tooltip for Button">
-        <button>Hover over me</button>
+    <div>
+      <Tooltip text="Tooltip for Heading">
+        <h2 className="tooltip">Hover over heading</h2>
       </Tooltip>
 
-      <br /><br />
-
-      <Tooltip text="Tooltip for text">
-        <span style={{ borderBottom: "1px dotted black", cursor: "pointer" }}>
-          Hover over this text
-        </span>
+      <Tooltip text="Tooltip for paragraph">
+        <p className="tooltip">Hover over paragraph</p>
       </Tooltip>
 
-      <br /><br />
-
-      <Tooltip text="Tooltip on an image">
-        <img
-          src="https://via.placeholder.com/100"
-          alt="placeholder"
-          style={{ border: "1px solid black", cursor: "pointer" }}
-        />
+      <Tooltip text="Another tooltip">
+        <h2 className="tooltip">Hover over another heading</h2>
       </Tooltip>
     </div>
   );
